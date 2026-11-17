@@ -1,0 +1,39 @@
+# Private working context: Q&A notes, project logs, review docs. Never commit or publish.
+context/
+
+# Test data and credentials
+.env
+.env.*
+*.pem
+state.json
+
+# OS, editor, dependencies, builds
+.DS_Store
+node_modules/
+dist/
+build/
+.next/
+.vercel/
+
+# Original screenshots and videos (optimized copies live in public/)
+portfolio-assets/
+
+# Demo-video working files (raw takes, intermediate cuts, exports, OBS password)
+scripts/demo-videos/*/raw/
+scripts/demo-videos/*/build/
+scripts/demo-videos/*/out/
+scripts/demo-videos/*/endcard.png
+scripts/demo-videos/*/build_*
+scripts/demo-videos/*/used-live-candidates.json
+
+# Next.js / tooling
+/node_modules
+/.next/
+/out/
+/coverage
+/playwright-report/
+/test-results/
+/.lighthouseci/
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*

@@ -1,0 +1,40 @@
+name: Lighthouse
+
+# Runs against each successful Vercel production deployment (Vercel's GitHub integration reports
+# deployment statuses). Previews are skipped: Vercel serves them with noindex, which would always
+# fail the SEO category. Budgets are warnings, not a gate (see lighthouserc.json).
+on:
+  deployment_status:
+
+jobs:
+  lighthouse:
+    if: github.event.deployment_status.state == 'success' && startsWith(github.event.deployment_status.environment, 'Production')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Lighthouse (mobile, 3 runs per page)
+        env:
+          BASE_URL: ${{ github.event.deployment_status.environment_url || github.event.deployment_status.target_url }}
+          # Needed while Vercel Deployment Protection is on for previews:
+          # Vercel → Settings → Deployment Protection → Protection Bypass for Automation.
+          BYPASS: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
+        run: |
+          HEADERS='{}'
+          if [ -n "$BYPASS" ]; then HEADERS="{\"x-vercel-protection-bypass\":\"$BYPASS\"}"; fi
+          npx lhci autorun \
+            --collect.url="$BASE_URL/" \
+            --collect.url="$BASE_URL/projects" \
+            --collect.url="$BASE_URL/projects/statly" \
+            --collect.settings.extraHeaders="$HEADERS"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-reports
+          path: .lighthouseci/reports/
+          retention-days: 14

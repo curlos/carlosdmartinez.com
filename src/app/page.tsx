@@ -77,7 +77,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
       />
 
-      <section id="top" className="flex flex-col gap-5 pt-24 pb-[clamp(28px,5vw,40px)]">
+      <section id="top" className="flex flex-col gap-5 pt-12 md:pt-24 pb-[clamp(28px,5vw,40px)]">
         <p className="font-mono text-sm text-accent">&gt; Miami, FL (open to relocation) · available now</p>
         <h1 className="font-mono text-[clamp(40px,9vw,54px)] leading-[1.1] font-bold tracking-[-0.02em]">
           Carlos Martinez
@@ -134,7 +134,11 @@ export default function Home() {
           {/* Decorative: the company name is in the heading next to it. */}
           <Image src={qlinkWirelessLogo} alt="" width={40} height={40} className="shrink-0 rounded-lg" />
           <div className="flex flex-1 flex-wrap items-baseline justify-between gap-2">
-            <h3 className="text-xl font-bold">Frontend Developer · Q Link Wireless</h3>
+            <h3 className="text-xl font-bold">
+              Frontend Developer
+              <span className="hidden sm:inline"> · </span>
+              <span className="block sm:inline">Q Link Wireless</span>
+            </h3>
             <p className="font-mono text-sm text-muted">Apr 2022 – Nov 2024</p>
           </div>
         </div>
@@ -151,7 +155,11 @@ export default function Home() {
           <div className="flex items-center gap-3.5">
             <Image src={motionpointLogo} alt="" width={40} height={40} className="shrink-0 rounded-lg" />
             <div className="flex flex-1 flex-wrap items-baseline justify-between gap-2">
-              <h3 className="text-lg font-bold">Software Engineer Intern · MotionPoint</h3>
+              <h3 className="text-lg font-bold">
+                Software Engineer Intern
+                <span className="hidden sm:inline"> · </span>
+                <span className="block sm:inline">MotionPoint</span>
+              </h3>
               <p className="font-mono text-sm text-muted">May – Jul 2020</p>
             </div>
           </div>

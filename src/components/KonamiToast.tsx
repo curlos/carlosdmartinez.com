@@ -4,9 +4,16 @@ import { Trophy } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const SEQUENCE = [
-  "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown",
-  "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight",
-  "b", "a",
+  "ArrowUp",
+  "ArrowUp",
+  "ArrowDown",
+  "ArrowDown",
+  "ArrowLeft",
+  "ArrowRight",
+  "ArrowLeft",
+  "ArrowRight",
+  "b",
+  "a",
 ];
 
 function isTyping(target: EventTarget | null) {
@@ -49,7 +56,8 @@ export default function KonamiToast() {
       {visible && (
         <p
           key={shown}
-          className="flex items-center gap-2 rounded-btn border border-accent bg-surface px-3.5 py-2.5 font-mono text-[13px] text-text shadow-lg motion-safe:animate-[toast-in_200ms_ease-out]">
+          className="flex items-center gap-2 rounded-btn border border-accent bg-surface px-3.5 py-2.5 font-mono text-[13px] text-text shadow-lg motion-safe:animate-[toast-in_200ms_ease-out]"
+        >
           <Trophy size={16} className="text-accent" aria-hidden="true" />
           Achievement unlocked: Secret found
         </p>

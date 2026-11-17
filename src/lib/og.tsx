@@ -18,9 +18,7 @@ async function fontBytes() {
 
 export async function ogFonts() {
   // next/og needs ArrayBuffers; the cache hands back typed arrays.
-  const [inter400, inter600, inter700, mono700] = (await fontBytes()).map(
-    (bytes) => Uint8Array.from(bytes).buffer,
-  );
+  const [inter400, inter600, inter700, mono700] = (await fontBytes()).map((bytes) => Uint8Array.from(bytes).buffer);
   return [
     { name: "Inter", data: inter400, weight: 400 as const, style: "normal" as const },
     { name: "Inter", data: inter600, weight: 600 as const, style: "normal" as const },
@@ -62,15 +60,11 @@ export function OgCard({
     >
       <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
         <div style={{ fontFamily: "JetBrains Mono", fontSize: 28, color: "#3fb950" }}>{kicker}</div>
-        <div style={{ fontFamily: "JetBrains Mono", fontWeight: 700, fontSize: 76, lineHeight: 1.05 }}>
-          {title}
-        </div>
+        <div style={{ fontFamily: "JetBrains Mono", fontWeight: 700, fontSize: 76, lineHeight: 1.05 }}>{title}</div>
         {subtitle && <div style={{ fontSize: 38, fontWeight: 600 }}>{subtitle}</div>}
         <div style={{ fontSize: 30, color: "#9aa4af", lineHeight: 1.4, maxWidth: 980 }}>{body}</div>
       </div>
-      {footer && (
-        <div style={{ fontFamily: "JetBrains Mono", fontSize: 22, color: "#9aa4af" }}>{footer}</div>
-      )}
+      {footer && <div style={{ fontFamily: "JetBrains Mono", fontSize: 22, color: "#9aa4af" }}>{footer}</div>}
     </div>
   );
 }

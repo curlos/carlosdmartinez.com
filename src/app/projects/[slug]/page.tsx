@@ -183,10 +183,7 @@ async function ProjectDetails({ params }: Pick<PageProps<"/projects/[slug]">, "p
         <ArchitectureDiagram architecture={page.architecture} slug={project.slug} />
         <div className="flex flex-col gap-5">
           {page.stories.map((story) => (
-            <article
-              key={story.title}
-              className="rounded-card border border-border bg-surface p-6 max-sm:p-5"
-            >
+            <article key={story.title} className="rounded-card border border-border bg-surface p-6 max-sm:p-5">
               <h3 className="mb-4 text-xl font-bold">{story.title}</h3>
               <dl className="flex flex-col gap-3">
                 {(
@@ -219,7 +216,11 @@ async function ProjectDetails({ params }: Pick<PageProps<"/projects/[slug]">, "p
         className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-[clamp(28px,5vw,40px)] pb-16"
       >
         <BackLink href="/projects">all projects</BackLink>
-        <Link href={`/projects/${next.slug}`} prefetch={true} className="group ml-auto inline-flex flex-col items-end gap-1">
+        <Link
+          href={`/projects/${next.slug}`}
+          prefetch={true}
+          className="group ml-auto inline-flex flex-col items-end gap-1"
+        >
           <span className="font-mono text-[13px] text-muted">next project</span>
           <span className="inline-flex items-center gap-2 text-right text-[22px] leading-tight font-bold text-accent group-hover:text-accent-hover">
             {next.name}

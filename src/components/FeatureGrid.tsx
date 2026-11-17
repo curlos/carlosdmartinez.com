@@ -37,8 +37,7 @@ function Media({ feature }: { feature: ShownFeature }) {
   );
 }
 
-const hasImage = (feature: Feature): feature is ShownFeature =>
-  feature.image !== undefined;
+const hasImage = (feature: Feature): feature is ShownFeature => feature.image !== undefined;
 
 export function FeatureGrid({ features }: { features: Feature[] }) {
   return (
@@ -46,10 +45,7 @@ export function FeatureGrid({ features }: { features: Feature[] }) {
       <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] gap-5">
         {/* Features without a screenshot yet stay hidden. */}
         {features.filter(hasImage).map((feature) => (
-          <figure
-            key={feature.title}
-            className="overflow-hidden rounded-card border border-border bg-surface"
-          >
+          <figure key={feature.title} className="overflow-hidden rounded-card border border-border bg-surface">
             <Media feature={feature} />
             <figcaption className="flex flex-col gap-1.5 px-[18px] py-4">
               <span className="font-bold text-text">{feature.title}</span>

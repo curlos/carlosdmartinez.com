@@ -9,10 +9,7 @@ type Props = {
 
 export function SectionHeading({ id, number, children, className = "mb-7", small = false }: Props) {
   return (
-    <h2
-      id={id}
-      className={`font-mono leading-tight font-bold ${small ? "text-[26px]" : "text-[28px]"} ${className}`}
-    >
+    <h2 id={id} className={`font-mono leading-tight font-bold ${small ? "text-[26px]" : "text-[28px]"} ${className}`}>
       <span className="text-accent">{number}.</span> {children}
     </h2>
   );

@@ -22,9 +22,7 @@ const nextConfig: NextConfig = {
       // Opens in the browser; saves as a readable file name.
       {
         source: "/resume.pdf",
-        headers: [
-          { key: "Content-Disposition", value: 'inline; filename="Carlos-Martinez-Resume.pdf"' },
-        ],
+        headers: [{ key: "Content-Disposition", value: 'inline; filename="Carlos-Martinez-Resume.pdf"' }],
       },
     ];
   },

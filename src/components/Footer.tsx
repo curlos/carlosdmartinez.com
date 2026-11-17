@@ -22,9 +22,7 @@ export function Footer() {
         </p>
         {/* Keyboard only, so it's hidden under 768px, where there's rarely one. */}
         <p className="hidden flex-wrap items-center gap-1 md:flex">
-          <span className="sr-only">
-            Try the Konami code: up, up, down, down, left, right, left, right, B, A
-          </span>
+          <span className="sr-only">Try the Konami code: up, up, down, down, left, right, left, right, B, A</span>
           <span aria-hidden="true" className="mr-1.5">
             try
           </span>

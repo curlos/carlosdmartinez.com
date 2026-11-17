@@ -99,7 +99,12 @@ function stack({ nodes, edges }: Architecture): Placed[] {
     for (const edge of edges) {
       const other = edge.from === node.id ? edge.to : edge.to === node.id ? edge.from : null;
       if (other && !seen.has(other)) {
-        visit(nodes.find((n) => n.id === other)!, depth + 1, item, edge);
+        visit(
+          nodes.find((n) => n.id === other)!,
+          depth + 1,
+          item,
+          edge,
+        );
       }
     }
   };

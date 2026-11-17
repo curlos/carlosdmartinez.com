@@ -1,0 +1,19 @@
+# Generated or vendored
+node_modules
+.next
+.lighthouseci
+playwright-report
+test-results
+package-lock.json
+next-env.d.ts
+
+# Binary assets
+public
+
+# Rewritten by `next dev`
+AGENTS.md
+CLAUDE.md
+
+# Offline video tooling (tabs, its own style) and the project's Claude skill
+scripts/demo-videos
+.claude

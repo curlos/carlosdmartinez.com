@@ -166,16 +166,7 @@ const pages: Record<string, ProjectPage> = {
       },
     ],
     note: "No TickTick account needed: try guest mode with demo data.",
-    stack: [
-      "React",
-      "TypeScript",
-      "Redux Toolkit",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "FastAPI",
-      "Hugging Face",
-    ],
+    stack: ["React", "TypeScript", "Redux Toolkit", "Node.js", "Express", "MongoDB", "FastAPI", "Hugging Face"],
     stats: [
       {
         value: "13s → <1s",
@@ -208,8 +199,7 @@ const pages: Record<string, ProjectPage> = {
       },
       {
         title: "Medals and challenges",
-        description:
-          "Rewards for focus and task milestones: daily, weekly, monthly, yearly and lifetime.",
+        description: "Rewards for focus and task milestones: daily, weekly, monthly, yearly and lifetime.",
         page: "Medals and Challenges pages",
         image: statlyMedalsPageAGridOfFocusMedalsWith,
         alt: "Medals page: a grid of focus medals with how many times each was earned",
@@ -345,8 +335,7 @@ const pages: Record<string, ProjectPage> = {
       },
       {
         title: "Keeping each account's data separate",
-        problem:
-          "When one account imported its TickTick data, it took over records that belonged to another account.",
+        problem: "When one account imported its TickTick data, it took over records that belonged to another account.",
         whatIDid:
           "Made every record unique per user (record ID + user ID), and added a rule that throws an error if any query is missing a user ID.",
         result: "An import can only ever touch its own account's records.",
@@ -428,8 +417,7 @@ const pages: Record<string, ProjectPage> = {
       },
       {
         title: '"How this was made" trace',
-        description:
-          "Shows each agent step behind a line, and any Fact Guard catch with the before and after.",
+        description: "Shows each agent step behind a line, and any Fact Guard catch with the before and after.",
         page: "Trace panel",
         image: playerlensHowThisWasMadeInterpreterMomentsCo,
         alt: "How this was made: Interpreter, Moments, Commentator, Fact Guard (passed) and Personalizer steps for a goal line",
@@ -556,8 +544,7 @@ const pages: Record<string, ProjectPage> = {
         problem:
           "Listening to matches, I noticed the commentator rarely mentioned mistakes. A rule required a rating change of at least 0.10 before writing a line, so small negatives like losing the ball (−0.08) were skipped.",
         whatIDid: "Removed the threshold so every rating change, up or down, gets a line.",
-        result:
-          "Commentary now covers mistakes as well as highlights, and every rating change is explained.",
+        result: "Commentary now covers mistakes as well as highlights, and every rating change is explained.",
       },
     ],
     role: "I led Player Lens as its product owner. I wrote the plans and specs, decided what the rating rewards, how the commentator sounds and what it may cost, and set the simulator's calibration targets. I directed Claude Code through the build, had outside reviewers (CodeRabbit, a separate Claude review, and Codex on earlier phases) check the code, and tested and listened to the voice changes. The project has 200+ automated tests.",
@@ -570,8 +557,7 @@ const pages: Record<string, ProjectPage> = {
       width: 1920,
       height: 1080,
     },
-    summary:
-      "An online sneaker store where you can search thousands of shoes, read and write reviews, and check out.",
+    summary: "An online sneaker store where you can search thousands of shoes, read and write reviews, and check out.",
     buttons: [
       {
         label: "Live demo",
@@ -654,8 +640,7 @@ const pages: Record<string, ProjectPage> = {
       },
     ],
     architecture: {
-      label:
-        "Architecture: a React frontend calls an Express API, which uses MongoDB Atlas, Stripe and Cloudinary",
+      label: "Architecture: a React frontend calls an Express API, which uses MongoDB Atlas, Stripe and Cloudinary",
       height: 300,
       nodes: [
         {
@@ -737,8 +722,7 @@ const pages: Record<string, ProjectPage> = {
     stories: [
       {
         title: "Getting 20,000+ sneakers",
-        problem:
-          "The sneaker data comes from a third-party API with a small monthly request limit.",
+        problem: "The sneaker data comes from a third-party API with a small monthly request limit.",
         whatIDid:
           "Wrote a script that pulled the catalog brand by brand, 100 shoes per request, and saved each shoe in MongoDB, skipping ones already saved.",
         result: "20,000+ sneakers, and the site never calls the outside API.",
@@ -753,8 +737,7 @@ const pages: Record<string, ProjectPage> = {
       {
         title: "Caching without stale data",
         problem: "Data was fetched separately in many components, and cached data could go stale.",
-        whatIDid:
-          "Moved data fetching to RTK Query, with cache invalidation tied to the logged-in user.",
+        whatIDid: "Moved data fetching to RTK Query, with cache invalidation tied to the logged-in user.",
         result: "Fewer duplicate requests, and correct data after login, logout and new orders.",
       },
     ],
@@ -926,8 +909,7 @@ const pages: Record<string, ProjectPage> = {
       width: 1920,
       height: 1080,
     },
-    summary:
-      "Bookmark moments in YouTube videos and Shorts, add notes, and jump back to them in one click.",
+    summary: "Bookmark moments in YouTube videos and Shorts, add notes, and jump back to them in one click.",
     buttons: [
       {
         label: "Add to Chrome",
@@ -963,7 +945,8 @@ const pages: Record<string, ProjectPage> = {
     features: [
       {
         title: "One-click bookmarks with frame previews",
-        description: "A button in YouTube's player saves the moment. The popup shows the real frame from every bookmark; press play to jump back.",
+        description:
+          "A button in YouTube's player saves the moment. The popup shows the real frame from every bookmark; press play to jump back.",
         page: "YouTube video page + popup",
         image: markbackBookmarkButtonInThePlayerNextToThePopup,
         alt: "The bookmark button in the YouTube player next to the Markback popup showing the video's bookmarks",
@@ -977,21 +960,24 @@ const pages: Record<string, ProjectPage> = {
       },
       {
         title: "Shorts too",
-        description: "The bookmark button sits right in the Shorts action bar, and Shorts show up in your list next to regular videos.",
+        description:
+          "The bookmark button sits right in the Shorts action bar, and Shorts show up in your list next to regular videos.",
         page: "YouTube Shorts",
         image: markbackBookmarkButtonInTheShortsActionBar,
         alt: "The bookmark button in the YouTube Shorts action bar",
       },
       {
         title: "Bookmark history",
-        description: "Every video and Short you've bookmarked, sorted by most or least recently updated, or by number of bookmarks. Click one to open it; delete one bookmark, a video's bookmarks, or everything.",
+        description:
+          "Every video and Short you've bookmarked, sorted by most or least recently updated, or by number of bookmarks. Click one to open it; delete one bookmark, a video's bookmarks, or everything.",
         page: "Popup history view",
         image: markbackAllVideosWithBookmarks,
         alt: "The list of all videos with bookmarks",
       },
       {
         title: "Settings",
-        description: "Turn preview frames, progress bars and auto-scroll to the next bookmark on or off, split a regular video into parts at your bookmarks, and export your bookmarks to a file to import on another computer.",
+        description:
+          "Turn preview frames, progress bars and auto-scroll to the next bookmark on or off, split a regular video into parts at your bookmarks, and export your bookmarks to a file to import on another computer.",
         page: "Settings",
         image: markbackSettings,
         alt: "Markback settings",
@@ -1283,8 +1269,7 @@ const pages: Record<string, ProjectPage> = {
       width: 1920,
       height: 1080,
     },
-    summary:
-      "A movie and TV discovery app powered by TMDB, with filters, trailers, accounts and subscription plans.",
+    summary: "A movie and TV discovery app powered by TMDB, with filters, trailers, accounts and subscription plans.",
     buttons: [
       {
         label: "Live demo",
@@ -1329,8 +1314,7 @@ const pages: Record<string, ProjectPage> = {
     features: [
       {
         title: "Browse and filter",
-        description:
-          "Filter movies and shows by genre, year and sort order, with filters saved in the URL.",
+        description: "Filter movies and shows by genre, year and sort order, with filters saved in the URL.",
         page: "Movies and TV Shows pages",
         image: reelhouseMoviesPageWithFilterChipsAndAGrid,
         alt: "Movies page with filter chips and a grid of posters",
@@ -1450,10 +1434,8 @@ const pages: Record<string, ProjectPage> = {
     stories: [
       {
         title: "Caching every request",
-        problem:
-          "Each component fetched from TMDB on its own, so the same data was requested again and again.",
-        whatIDid:
-          "Moved every request to RTK Query, plus Redux Persist so the cache survives a reload.",
+        problem: "Each component fetched from TMDB on its own, so the same data was requested again and again.",
+        whatIDid: "Moved every request to RTK Query, plus Redux Persist so the cache survives a reload.",
         result: "Going back to a page doesn't refetch.",
       },
       {

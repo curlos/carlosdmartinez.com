@@ -100,9 +100,7 @@ test.describe("copy button", () => {
     const button = page.getByRole("button", { name: "Copy email address" });
     await button.click();
     await expect(button).toHaveText("Copied!");
-    expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(
-      "carlosdmartinez.dev@gmail.com",
-    );
+    expect(await page.evaluate(() => navigator.clipboard.readText())).toBe("carlosdmartinez.dev@gmail.com");
     await expect(button).toHaveText("Copy", { timeout: 3000 });
   });
 });
@@ -124,7 +122,18 @@ test("Konami code shows the achievement toast", async ({ page, isMobile }) => {
   test.skip(isMobile, "needs a keyboard");
   await page.goto("/");
   await expect(page.getByRole("status")).toBeAttached();
-  for (const key of ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"]) {
+  for (const key of [
+    "ArrowUp",
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "ArrowLeft",
+    "ArrowRight",
+    "b",
+    "a",
+  ]) {
     await page.keyboard.press(key);
   }
   await expect(page.getByRole("status")).toHaveText("Achievement unlocked: Secret found");

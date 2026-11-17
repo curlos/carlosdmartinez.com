@@ -9,15 +9,7 @@ import { CopyEmailButton } from "@/components/CopyEmailButton";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { featuredProjects } from "@/data/projects";
-import {
-  BASE_OPEN_GRAPH,
-  EMAIL,
-  GITHUB_URL,
-  LINKEDIN_URL,
-  SITE_DESCRIPTION,
-  SITE_TITLE,
-  SITE_URL,
-} from "@/lib/site";
+import { BASE_OPEN_GRAPH, EMAIL, GITHUB_URL, LINKEDIN_URL, SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -86,9 +78,7 @@ export default function Home() {
       />
 
       <section id="top" className="flex flex-col gap-5 pt-24 pb-[clamp(28px,5vw,40px)]">
-        <p className="font-mono text-sm text-accent">
-          &gt; Miami, FL (open to relocation) · available now
-        </p>
+        <p className="font-mono text-sm text-accent">&gt; Miami, FL (open to relocation) · available now</p>
         <h1 className="font-mono text-[clamp(40px,9vw,54px)] leading-[1.1] font-bold tracking-[-0.02em]">
           Carlos Martinez
         </h1>
@@ -149,10 +139,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-2.5 flex flex-col gap-1 text-[15px] text-muted">
-          <p>
-            Lifeline provider with 1M+ subscribers, plus its prepaid sister brand Hello Mobile
-            (40K+ customers)
-          </p>
+          <p>Lifeline provider with 1M+ subscribers, plus its prepaid sister brand Hello Mobile (40K+ customers)</p>
           <p className="font-mono text-[13px]">React · TypeScript · Redux · Next.js</p>
         </div>
         <ul className="mt-4 flex max-w-[820px] list-disc flex-col gap-2.5 pl-5 text-text-2">
@@ -169,8 +156,8 @@ export default function Home() {
             </div>
           </div>
           <p className="mt-2 max-w-[820px] text-text-2">
-            Automated Jenkins environment setup with Python and shell scripts, cutting onboarding
-            time for new developers.
+            Automated Jenkins environment setup with Python and shell scripts, cutting onboarding time for new
+            developers.
           </p>
         </div>
       </section>
@@ -197,11 +184,10 @@ export default function Home() {
           About
         </SectionHeading>
         <p className="max-w-[720px] text-lg text-text-2">
-          I build with AI the way a tech lead works with a team: I write the spec, direct Claude
-          Code through implementation, then review every change with independent reviewers and
-          hands-on testing before it ships. I own the decisions and the quality bar. Lifelong
-          gamer (which is why Statly has streaks and medals) and NBA fan. Computer Science grad
-          from FIU, bilingual in English and Spanish, based in Miami.
+          I build with AI the way a tech lead works with a team: I write the spec, direct Claude Code through
+          implementation, then review every change with independent reviewers and hands-on testing before it ships. I
+          own the decisions and the quality bar. Lifelong gamer (which is why Statly has streaks and medals) and NBA
+          fan. Computer Science grad from FIU, bilingual in English and Spanish, based in Miami.
         </p>
       </section>
 
